@@ -5,32 +5,26 @@
 using namespace std;
  
 typedef pair<int, int> p;
-p jew[300000];
-int bag[300000];
-int n, k, m, v, c, i, j;
+p ramen[200000];
+priority_queue<int> pq;
+int n, i, m, cnt, dl, sum;
  
 int main() {
-    scanf("%d %d", &n, &k);
+    scanf("%d", &n);
+    for (i = 0; i < n; ++i)
+        scanf("%d %d", &ramen[i].first, &ramen[i].second);
+    sort(ramen, ramen + n);
     for (i = 0; i < n; ++i) {
-        scanf("%d %d", &jew[i].first, &jew[i].second);
-    }
-    for (i = 0; i < k; ++i)
-        scanf("%d", &bag[i]);
+        dl = ramen[i].first;
+        pq.push(-ramen[i].second);
  
-    sort(jew, jew + n);
-    sort(bag, bag + k);
- 
-    long long sum = 0;
-    priority_queue<int> pq;
-    for (i = 0, j = 0; i < k; ++i) {
-        while (j < n && jew[j].first <= bag[i])
-            pq.push(jew[j++].second);
-        
-        if (!pq.empty()) {
-            sum += pq.top();
+        while (dl < pq.size())
             pq.pop();
-        }
     }
-    printf("%lld", sum);
+    while (!pq.empty()) {
+        sum += pq.top();
+        pq.pop();
+    }
+    printf("%d", -sum);
     return 0;
 }
