@@ -2,60 +2,57 @@
 #include<iostream>
  
 #define endl "\n"
-#define MAX 10000
 using namespace std;
  
-int R, C, Answer;
-char MAP[MAX][500];
-bool Visit[MAX][500];
-bool Ans;
+int MAP[5][5], Answer = 0;
+bool Visit[1000000];
  
-int dx[] = { -1, 0, 1 };
-int dy[] = { 1, 1, 1, };
+int dx[] = { 0, 0, 1, -1 };
+int dy[] = { 1, -1, 0, 0 };
+ 
 void Input()
 {
-    cin >> R >> C;
-    for (int i = 0; i < R; i++)
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < C; j++)
+        for (int j = 0; j < 5; j++)
         {
             cin >> MAP[i][j];
         }
     }
 }
  
-void DFS(int x, int y)
+void DFS(int x, int y, int Sum, int Cnt)
 {
-    Visit[x][y] = true;
-    if (y == C - 1)
+    if (Cnt == 5)
     {
-        Ans = true;
-        Answer++;
+        if (Visit[Sum] == false)
+        {
+            Visit[Sum] = true;
+            Answer++;
+        }
         return;
+ 
     }
  
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         int nx = x + dx[i];
         int ny = y + dy[i];
- 
-        if (nx >= 0 && ny >= 0 && nx < R && ny < C)
+        
+        if (nx >= 0 && ny >= 0 && nx < 5 && ny < 5)
         {
-            if (MAP[nx][ny] == '.' && Visit[nx][ny] == false)
-            {
-                DFS(nx, ny);
-                if (Ans == true) return;
-            }
+            DFS(nx, ny, Sum * 10 + MAP[nx][ny], Cnt + 1);
         }
     }
 }
- 
 void Solution()
 {
-    for (int i = 0; i < R; i++)
+    for (int i = 0; i < 5; i++)
     {
-        Ans = false;
-        DFS(i, 0);
+        for (int j = 0; j < 5; j++)
+        {
+            DFS(i, j, MAP[i][j], 0);
+        }
     }
     cout << Answer << endl;
 }
@@ -72,9 +69,9 @@ int main(void)
     cin.tie(NULL);
     cout.tie(NULL);
  
-    //freopen("Input.txt", "r", stdin);
+//    freopen("Input.txt", "r", stdin);
     Solve();
  
     return 0;
 }
- 
+
