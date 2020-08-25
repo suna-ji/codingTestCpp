@@ -1,64 +1,80 @@
 // 연습장
-#include <stdio.h>
-#include <iostream>
-
+#include<iostream>
+ 
+#define endl "\n"
+#define MAX 10000
 using namespace std;
-
-int computers;
-int connections;
-
-int parent[10];
-
-int Find(int x){
-
-	if(x == parent[x]){
-		return x;
-	}
-	else{
-		int y = Find(parent[x]);
-		parent[x] = y;
-		return y;
-	}
-
+ 
+int R, C, Answer;
+char MAP[MAX][500];
+bool Visit[MAX][500];
+bool Ans;
+ 
+int dx[] = { -1, 0, 1 };
+int dy[] = { 1, 1, 1, };
+void Input()
+{
+    cin >> R >> C;
+    for (int i = 0; i < R; i++)
+    {
+        for (int j = 0; j < C; j++)
+        {
+            cin >> MAP[i][j];
+        }
+    }
 }
-
-void Union(int x, int y){
-
-	x = Find(x);
-	y = Find(y);
-
-	if(x!=y){
-		parent[y] = x;
-	}
-
-
+ 
+void DFS(int x, int y)
+{
+    Visit[x][y] = true;
+    if (y == C - 1)
+    {
+        Ans = true;
+        Answer++;
+        return;
+    }
+ 
+    for (int i = 0; i < 3; i++)
+    {
+        int nx = x + dx[i];
+        int ny = y + dy[i];
+ 
+        if (nx >= 0 && ny >= 0 && nx < R && ny < C)
+        {
+            if (MAP[nx][ny] == '.' && Visit[nx][ny] == false)
+            {
+                DFS(nx, ny);
+                if (Ans == true) return;
+            }
+        }
+    }
 }
-
-int main() {
-
-	scanf("%d", &computers);
-	scanf("%d", &connections);
-
-	// 초기화
-	// 처음에는 각각 노드가 부모노드가 자기자신
-	for(int i=0; i<=computers; i++){
-		parent[i] = i;
-	}
-
-	int u,v;
-	while(connections--){
-		scanf("%d %d", &u, &v);
-
-		Union(u,v);
-	}
-
-	// Root 노드가 1인 노드를 검색해서 cnt에 더해줌
-	int cnt = 0;
-	for(int i=2; i<=computers; i++){
-		if(Find(1) == Find(i)) cnt++;
-	}
-
-	printf("%d\n", cnt);
-
-	return 0;
+ 
+void Solution()
+{
+    for (int i = 0; i < R; i++)
+    {
+        Ans = false;
+        DFS(i, 0);
+    }
+    cout << Answer << endl;
 }
+ 
+void Solve()
+{
+    Input();
+    Solution();
+}
+ 
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+ 
+    //freopen("Input.txt", "r", stdin);
+    Solve();
+ 
+    return 0;
+}
+ 
