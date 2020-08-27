@@ -16,7 +16,7 @@ vector<int> answer;
 
 void dfs(int y, int x){
     visit[y][x] = true;
-    for(int i = 0; i < 8; i++){
+    for(int i = 0; i < 8; i++){ // i < 7이라고 해서 2시간 날린듯
         int ny = y + dy[i];
         int nx = x + dx[i];
         if(nx >= 0 && ny >= 0 && nx < w && ny < h){
@@ -42,7 +42,7 @@ int main(){
         }// map입력받음
         cnt = 0;
         for(int i = 0; i < h; i++){
-            for(int j = 0; j < w; j++){ // 한줄씩 오른쪽으로 증가시키면서 dfs실행
+            for(int j = 0; j < w; j++){ 
                 if(map[i][j] && !visit[i][j]){ // 땅이고 방문하지 않았으면
                     dfs(i,j);
                     cnt++;
