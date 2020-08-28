@@ -38,8 +38,8 @@ int main(){
             map[y][x] = 1;
         }
         cnt = 0;
-        for(int j = 0; j < N; j++){ // y
-            for(int k = 0; k < M; k++){ // x
+        for(int j = 0; j < N; j++){ //  세로 x
+            for(int k = 0; k < M; k++){ //  가로 y
                 if(map[j][k] && !visit[j][k]) { // 배추가 있고 방문하지 않았으면
                     cnt++;
                     dfs(j, k);
