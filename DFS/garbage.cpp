@@ -4,7 +4,7 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
-#define MAX 101
+#define MAX 101 // 100이라고 해서 30분 날린듯
 using namespace std;
 
 int dx[] = {0 , 0, -1, 1};
