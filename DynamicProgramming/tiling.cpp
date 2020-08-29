@@ -18,8 +18,7 @@ int dp(int x){
 int main(){
     int n;
     scanf("%d", &n); 
-    cout << dp(n) 
-    << endl;
+    cout << dp(n) << endl;
 }
 
 
