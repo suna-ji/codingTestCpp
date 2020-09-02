@@ -9,7 +9,8 @@ int main(){
     cin >> word;
    
     for(int i = 0; i < word.length(); i++){
-        alphabet[(int)word[i]-97]++;
+        //alphabet[(int)word[i]-97]++;
+        alphabet[word[i]-'a']++;
     }
     for(int i = 0; i < 26; i++){
         cout << alphabet[i] << " ";
