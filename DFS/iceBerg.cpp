@@ -69,12 +69,13 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    scanf("%d %d", &row, &col); // [x][] [][y]
+    cin >> row >> col; 
     for(int i = 0; i < row; i++){
         for(int j = 0; j < col; j++){ 
             cin >> map[i][j];
         }
     }
+
     while(1){
         memset(visit, false, sizeof(visit));
         
@@ -105,6 +106,4 @@ int main(){
             return 0;
         }
     }
-    return 0;
 }
-// 실패 
