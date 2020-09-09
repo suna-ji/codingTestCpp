@@ -16,14 +16,14 @@ int dx[] = {0, 1, -1, 0};
 int dy[] = {1, 0, 0, -1};
 // 동 서 남 북
 
-void dfs(int y, int x){
-    visit[y][x] = true;
+void dfs(int x, int y){
+    visit[x][y] = true;
     for(int i = 0; i < 4; i++){
-        int ny = y + dy[i];
         int nx = x + dx[i];
-        if(nx >= 0 && ny >= 0 && nx < col && ny < row){
-            if(map[ny][nx] && !visit[ny][nx]){
-                dfs(ny, nx);
+        int ny = y + dy[i];
+        if(nx >= 0 && ny >= 0 && nx < row && ny < col){
+            if(map[nx][ny] && !visit[nx][ny]){
+                dfs(nx, ny);
             }
         }
     }
@@ -68,6 +68,7 @@ void melt(){
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
+
     scanf("%d %d", &row, &col); // [x][] [][y]
     for(int i = 0; i < row; i++){
         for(int j = 0; j < col; j++){ 
