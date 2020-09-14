@@ -1,50 +1,49 @@
-//큐 - 10845
+#include <string>
+#include <deque>
+#include <vector>
 #include <iostream>
-#include <queue>
 using namespace std;
+deque<int> dq;
 
-int main(){
-    int N;
-    cin >> N;
-    string command;
-    int operand;
-    queue<int> q;
-    while(N--){
-        cin >> command;
-        if(command == "push"){
-            cin >> operand;
-            q.push(operand);
-        }
-        else if(command == "pop"){
-            if(!q.empty()){
-                cout << q.front() << '\n';
-                q.pop();
-            }else{
-                cout << -1 << "\n";
+vector<int> solution(vector<int> ball, vector<int> order) {
+    vector<int> answer;
+    vector<int> temp;
+    for(int i = 0; i < ball.size(); i++){
+        dq.push_back(ball[i]);
+    }
+    for(int i = 0; i < order.size(); i++){
+        if(!dq.empty()){
+            if(!temp.empty()){
+                for(int i = 0; i < temp.size(); i++){
+                    if(temp[i] == dq.back()){
+                        cout << dq.back()<< "temp의 백에서 뺌" << "\n";
+                        temp.erase(temp.begin()+i);
+                        answer.push_back(dq.back());
+                        dq.pop_back();
+                    }
+                    if(temp[i] == dq.front()){
+                        cout << dq.front() << "temp의 프론트에서 뺌" << "\n";
+                        temp.erase(temp.begin()+i);
+                        answer.push_back(dq.front());
+                        dq.pop_front();
+                    }
+                }
             }
-        }
-        else if(command == "size"){
-            cout << q.size() << '\n';
-        }
-        else if(command == "empty"){
-            if(q.empty()){
-                cout << 1 << '\n';
-            }else{
-                cout << 0 << '\n';
+            if(dq.front() == order[i]){
+                cout << dq.front() << "프론트에서 뺌" << "\n";
+                answer.push_back(dq.front());
+                dq.pop_front();
             }
-        }
-        else if(command == "front"){
-            if(!q.empty()){
-                cout << q.front() << '\n';
-            }else{
-                cout << -1 << "\n";
+            else if(dq.back() == order[i]){
+                cout << dq.back() << "백에서 뺌" <<"\n";
+                answer.push_back(dq.back());
+                dq.pop_back();
             }
-        }else{ // back
-            if(!q.empty()){
-                cout << q.back() << '\n';
-            }else{
-                cout << -1 << "\n";
-            }
+            else{
+                cout << order[i]<< "temp에 넣음"<< "\n";
+                temp.push_back(order[i]);
+            }   
         }
-    }   
+    }
+    return answer;
 }
