@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 using namespace std;
-//char ch[1000000];
+char ch[1000000];
 //방법 1 - for문 돌면서 공백 카운트하고 1더하기 // 맨앞에 공백이 있을 수 있어서 이건 안된다
 // int main(){
 //     string str;
