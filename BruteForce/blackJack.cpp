@@ -17,7 +17,7 @@ int main(){
     for(int i = 0; i <= n-3; i++){
         for(int j = i+1; j < n-1; j++){
             for(int k = j+1; k < n; k++){
-                int sum = card[i] + card[j] + card[k];
+                int sum = card[i] + card[j] + card[k]; // 세장의 카드를 고르는 모든 경우의 수 // for문을 사용한 bruteForce 문제
                 if(sum > m) continue;
                 maxSum = max(maxSum, sum);
             }
