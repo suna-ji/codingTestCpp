@@ -48,8 +48,8 @@ void KMP(string parent, string pattern){
     }
 }
 int main(){
-    string parent = "ABABBABABCABB";
-    string pattern = "ABABC";
+    string parent = "baekjoon";
+    string pattern = "bak";
     KMP(parent, pattern);
     return 0;
 }    
