@@ -1,4 +1,4 @@
-// 히앤 킨 - 1100
+// 하얀 칸 - 1100
 #include <iostream>
 using namespace std;
 char map[8][8];
