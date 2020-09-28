@@ -26,7 +26,7 @@
 //             }else{
 //                 back = str.substr(idx+bomb.length());
 //             }
-//             str = front + back;
+//             str = front + back;fed
 //         }
 //     }
 //     if(str.length() == 0){
