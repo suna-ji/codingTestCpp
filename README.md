@@ -9,8 +9,13 @@ Deque
 LinkedList    
 Queue    
 Stack    
+Trie         
+String               
+Graph      
 ✔️ 알고리즘    
-BackTracking    
+BackTracking        
+BinarySearch      
+BruteForce     
 BFS    
 DFS    
 DisjointSet    
