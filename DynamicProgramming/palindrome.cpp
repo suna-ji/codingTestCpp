@@ -48,6 +48,7 @@
 //1 memo[s][s] = 1 // (문자열 길이 1이면 무조건 팰린드롬)(여기가 시작지점 각 원소 하나 하나는 팰린드론 -> 그럼 그 밖에 2개도 팰린드롬인지 확인하면 그 문자열은 팰린드롬)
 //2 memo[s][s+d] = Arr[s] == Arr[s+d];
 //3 memo[s][s+d] = memo[s+1][s+d-1] ? Arr[s] == Arr[s+d] : 0; 
+// 진짜 어렵다 ㅠㅠ 🤷‍♀ 다시풀기 🤷‍♀
 #include <iostream>
 #include <vector> 
 using namespace std;
