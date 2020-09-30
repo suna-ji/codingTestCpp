@@ -19,14 +19,15 @@ int main(){
             memo[i] = -1;
             continue;
         }
-        if(memo[i-3] == -1){
+        if(memo[i-3] == -1){ // memo[i-3]은 없고 memo[i-5]는 있어 -> memo[i] = memo[i-5] +1
             memo[i] = memo[i-5] + 1;
-            continue;
+            continue; // 그리고 다음 포문으로!
         }
         if(memo[i-5] == -1){
             memo[i] = memo[i-3] + 1;
             continue;
         }
+        // 이 아래가 실행되는 경우는 memo[i-3]와 memo[i-5]가 모두 있는 경우만!
         memo[i] = min((memo[i-3]+ 1), (memo[i-5] + 1));
     }
     cout << memo[N];
