@@ -1,4 +1,5 @@
 // 가장 큰 증가 부분 수열 - 11055
+// 아 너무 어려웠다..
 #include <iostream>
 #define MAX 1000 + 3
 using namespace std;
