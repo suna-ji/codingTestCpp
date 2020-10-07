@@ -6,8 +6,6 @@ using namespace std;
 
 int M, N;
 int map[MAX][MAX]; 
-int visit[MAX][MAX];
-int cnt = 0;
 int dx[4] = {-1, 1, 0, 0};
 int dy[4] = {0, 0, -1, 1};
 //상하좌우 이동 가능
