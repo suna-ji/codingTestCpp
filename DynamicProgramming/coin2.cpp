@@ -7,6 +7,7 @@ using namespace std;
 // n가지 종류의 종전이 있다 -> 이 동전을 적절하게 사용해서 K원이 되도록
 // 동전의 최소개수를 구해라
 // 사용한 동전의 구성이 같은데 순서만 다른것은 같은 경우
+// 혼자 풀었다!!
 int n, k;
 int coin[CMAX];
 int memo[KMAX]; // memo[i]: i원을 만드는 동전의 최소 개수
