@@ -33,17 +33,17 @@ int main(){
     //         }
     //     }
     // }
-    for(int i = 0; i <= N; i++){
+    for(int i = 1; i <= N; i++){
         memo[i] = 1;
-        for(int j = 0; j < i; j++){
-            if(numArr[i] > numArr[j] && memo[i] < memo[j]+ 1){ 
-                memo[i] = memo[j] + 1; 
+        for(int j = 1; j < i; j++){
+            if(numArr[i] > numArr[j] && memo[i] < memo[j]+ 1){ // 수열이 증가하고 + 이전 수열에서 시작하도록 하는게 더 좋을때
+                memo[i] = memo[j] + 1;  // 메모 갱신
             }
         }
     }
     int ans = 0;
-    for(int i = 0; i <= N; i++){
-        ans = max(ans, memo[i] - 1);
+    for(int i = 1; i <= N; i++){
+        ans = max(ans, memo[i]);
     }
     cout << ans;
     // 출력
