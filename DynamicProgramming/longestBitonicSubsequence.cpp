@@ -11,11 +11,14 @@ int memo[MAX];
 int r_memo[MAX]; 
 
 int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    // 빠른 입출력
     cin >> N;
     for(int i = 1; i <= N; i++){
         cin >> numArr[i];
     }
-
+    // 증가!!
     for(int i = 1; i <= N; i++){
        memo[i] = 1; // 각각은 모두 1이니까
        for(int j = 1; j < i; j++){
@@ -23,8 +26,8 @@ int main(){
                memo[i] = memo[j] + 1;
            }
        }
-    }// 가장 긴 증가하는 부분 수열 // 이건 중간에 끊기면 안된다.
-
+    }
+    // 감소!!
     for(int i = N; i >= 1; i--){
         r_memo[i] = 1;
         for(int j = N; j > i; j--){
@@ -32,11 +35,11 @@ int main(){
                 r_memo[i] = r_memo[j] + 1;
             }
         }
-    }// 가장 긴 감소하는 부분 수열
-
-    int ans = 0;
-    for(int i = 0; i <= N; i++){
-        ans = max(ans, memo[i] + r_memo[i]-1);
     }
-    cout << ans;
+    // 답 출력
+    int ans = 0;
+    for(int i = 1; i <= N; i++){
+        ans = max(ans, memo[i] + r_memo[i]);
+    }
+    cout << ans - 1; // 증가하다 감소하는 포인트! 그 숫자가 중복되어 계산된다 -> 1빼주기
 }
