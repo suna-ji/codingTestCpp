@@ -14,17 +14,37 @@ int main(){
         cin >> numArr[i];
     }
     // 입력
-    int Answer = 0;
+    // int Answer = 0;
+    // for(int i = 0; i <= N; i++){
+    //     memo[i] = 1;
+    //     for(int j = i-1; j >= 1; j--){// 자기보다 이전에 잇는 원소들 중에서 작은 원소를 찾고 // 자신보다 바로 이전에서만 이어지는게 아니라 이전에 있는 원소들 중 작은 원소면 무조건 이어질 수 있으니까 다 돌아봐야함
+    //         if(numArr[i] > numArr[j]){ // 그 원소를 선택했을 때, 현재 자기자신의 증가하는 부분수열의 크기보다 크다면 갱신
+    //             memo[i] = max(memo[i], memo[j] + 1); // 이전까지의 memo중에서 가장 큰 값을 현재의 memo로 지정
+    //         }
+    //     }
+    //     Answer = max(memo[i], Answer); // 지정된 memo[i]와 Answer중 큰 값을 answer에 지정
+    // }
+    // 로직
+    // for(int i = 0; i <= N; i++){
+    //     memo[i] = 1;
+    //     for(int j = i-1; j >= 1; j--){
+    //         if(numArr[i] > numArr[j] && memo[i] < memo[j]+ 1){ 
+    //             memo[i] = memo[j] + 1; 
+    //         }
+    //     }
+    // }
     for(int i = 0; i <= N; i++){
         memo[i] = 1;
-        for(int j = i-1; j >= 1; j--){
-            if(numArr[i] > numArr[j]){
-                memo[i] = max(memo[i], memo[j] + 1); // 이전까지의 memo중에서 가장 큰 값을 현재의 memo로 지정
+        for(int j = 0; j < i; j++){
+            if(numArr[i] > numArr[j] && memo[i] < memo[j]+ 1){ 
+                memo[i] = memo[j] + 1; 
             }
         }
-        Answer = max(memo[i], Answer); // 지정된 memo[i]와 Answer중 큰 값을 answer에 지정
     }
-    // 로직
-    cout << Answer;
+    int ans = 0;
+    for(int i = 0; i <= N; i++){
+        ans = max(ans, memo[i] - 1);
+    }
+    cout << ans;
     // 출력
 }
