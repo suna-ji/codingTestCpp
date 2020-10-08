@@ -12,15 +12,19 @@ int main(){
     for(int i = 1; i <= N; i++){
         cin >> numArr[i];
     }
-    int ans = 0;
+    
     for(int i = 1; i <= N; i++){
         memo[i] = 1; 
-        for(int j = i-1; j >= 1; j--){
-            if(numArr[j] > numArr[i]){ // 감소하는 수열이라면
-                memo[i] = max(memo[i], memo[j] + 1);
-            } 
+        for(int j = 1; j < i; j++){
+            if(numArr[i] < numArr[j] && memo[i] < memo[j] + 1){
+                memo[i] = memo[j] + 1;
+            }
         }
-        ans = max(memo[i], ans);
+        
+    }
+    int ans = 0;
+    for(int i = 1; i <= N; i++){
+        ans = max(ans, memo[i]);
     }
     cout << ans;
 }
