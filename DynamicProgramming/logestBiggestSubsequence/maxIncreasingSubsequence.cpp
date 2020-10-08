@@ -17,7 +17,6 @@ int main(){
         cin >> numArr[i];
     }
     
-    int result = 0;
     for(int i = 1; i <= N; i++){
         memo[i] = numArr[i];
         for(int j = 1; j < i; j++){
@@ -25,7 +24,11 @@ int main(){
                 memo[i] = memo[j] + numArr[i];
             }
         }
-        result = max(result, memo[i]);
     }
-    cout << result;
+    
+    int ans = 0;
+    for(int i = 1; i <= N; i++){
+        ans = max(ans, memo[i]);
+    }
+    cout << ans;
 }
