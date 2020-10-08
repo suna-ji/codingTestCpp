@@ -13,12 +13,13 @@ int memo[MAX][3];
 
 int main(){
     cin >> N;
-    for(int i = N; i >= 1; i--){
-        memo[i][0] = memo[i-1][0] + memo[i-1][1] + memo[i-1][2];
-        memo[i][1] = memo[i-1][0] + memo[i-1][2];
-        memo[i][2] = memo[i-1][0] + memo[i-1][1];
+    memo[1][0] = 1;
+    memo[1][1] = 1;
+    memo[1][2] = 1;
+    for(int i = 2; i <= N; i++){
+        memo[i][0] = (memo[i-1][0] + memo[i-1][1] + memo[i-1][2]) % 9901;
+        memo[i][1] = (memo[i-1][0] + memo[i-1][2]) % 9901;
+        memo[i][2] = (memo[i-1][0] + memo[i-1][1]) % 9901;
     }
-
-    cout << memo[1][0] + memo[1][1] + memo[1][2];
-
+    cout << (memo[N][0] + memo[N][1] + memo[N][2]) % 9901;
 }
