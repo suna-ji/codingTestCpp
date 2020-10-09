@@ -1,5 +1,6 @@
 // 이동하기 - 11048
 // 이동하며 가져올 수 있는 사탕의 최댓값을 출력
+// 목적지 정해져있음 -> N M
 #include <iostream>
 #include <algorithm>
 #define MAX 1000 + 3

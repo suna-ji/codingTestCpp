@@ -1,5 +1,6 @@
 // 점프 - 1890
 // 풀었지만..내리막 길(1520)번 없었으면 못풀었을듯..
+// 이것도 경로의 개수 구하는 문제
 #include <iostream>
 #include <cstring>
 #define MAX 100 + 3

@@ -1,4 +1,5 @@
 // 내리막 길 - 1520
+// 경로의 개수 구하는 문제
 #include <iostream>
 #include <cstring>
 #define MAX 500 + 2
