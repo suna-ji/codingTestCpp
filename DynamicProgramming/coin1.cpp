@@ -1,5 +1,5 @@
 // 동전 1 - 2293
-// 사용한 동전의 구성은 같은데 순서만 다른것으 같은 경우이다
+// 사용한 동전의 구성은 같은데 순서만 다른것은 같은 경우이다
 // 출처 :  https://yabmoons.tistory.com/491 [얍문's Coding World..]
 // 다시!!
 #include <iostream>
