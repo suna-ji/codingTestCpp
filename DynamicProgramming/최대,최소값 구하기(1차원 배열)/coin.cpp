@@ -1,4 +1,5 @@
 // 동전 - 2091
+// X원짜리 커피를 사려 하는데, 이때 사용하는 동전의 개수를 최대
 // 너무 어렵다
 #include <iostream>
 #include <algorithm>

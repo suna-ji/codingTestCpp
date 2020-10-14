@@ -1,4 +1,5 @@
 // 카드 구매하기 - 11052
+// 카드 N개를 갖기 위해 지불해야 하는 금액의 최댓값
 #include <iostream>
 #include <algorithm>
 #define MAX 1000 + 3

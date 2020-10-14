@@ -1,5 +1,6 @@
 // 포도주 시식- 2156
 // 다시 꼭 풀어야함 (계단문제랑 같이 풀자!)
+// 최대로 마실 수 있는 포도주 양
 #include <iostream>
 #include <algorithm>
 using namespace std;

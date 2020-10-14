@@ -1,4 +1,5 @@
 // 스티커 - 9465
+// 스티커 중에서 두 변을 공유하지 않는 스티커 점수의 최댓값
 #include <iostream>
 #include <cstring>
 #define MAX 100000 + 3

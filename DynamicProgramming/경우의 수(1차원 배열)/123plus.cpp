@@ -1,4 +1,5 @@
 // 1, 2, 3 더하기 - 9095
+// n을 1, 2, 3의 합으로 나타내는 방법의 수
 // 🤮 dp..baseCondition 찾는것도 어려웠음 🤮
 
 #include <iostream>

@@ -1,4 +1,5 @@
 // 1로 만들기 - 1463
+// 연산 세 개를 적절히 사용해서 1, 연산을 사용하는 횟수의 최솟값
 #include <iostream>
 #include <cstring>
 #define MAX 1000000 + 3
