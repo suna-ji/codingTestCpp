@@ -4,7 +4,7 @@
 #include <utility>
 #include <algorithm>
 #define MAX 100 + 2
-#define INF 1000000;
+#define INF 1000000
 using namespace std;
 // 임의의 두 사람이 최소 몇 단계 만에 이어질 수 있는지 계산하는 게임
 // 단계의 총 합을 케빈 베이컨이라고 한다. 
