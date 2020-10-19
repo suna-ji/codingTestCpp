@@ -3,8 +3,6 @@
 // P=>P 와 같이 전건과 후건이 같은 경우는 출력하지 않는다.
 // N개의 참인 명제가 주어졌을 때, 증명될 수 있는 명제를 모두 출력하라
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
 // 공백기준 문자열 자르기 위한 헤더
 #include <vector>
 #include <utility>
