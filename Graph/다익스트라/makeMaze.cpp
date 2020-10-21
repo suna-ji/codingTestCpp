@@ -34,7 +34,7 @@ int main(){
         int currentY = pq.top().first.second;
         int cost = -pq.top().second;
         pq.pop();
-        if(cost > dist[currentX][currentY]) continue;
+        //if(cost > dist[currentX][currentY]) continue;
         for(int i = 0; i < 4; i++){
             int nx = currentX + dx[i];
             int ny = currentY + dy[i];
